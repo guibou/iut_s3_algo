@@ -1,4 +1,4 @@
-Implementation d'arbre binaire et de hashmap.
+# Implementation d'arbre binaire et de hashmap
 
 Implementation commune arbre / hash:
 
@@ -25,6 +25,7 @@ python test_perf.py nomImplementation nbElements
 
 Examples :
 
+```
 λ manta iut_s3_algo → λ git master* → python test_perf.py simple 100
 Insertion Time: 0.001085519790649414
 Search time: 2.4275858402252197
@@ -59,3 +60,4 @@ Search time: 0.8418979644775391
 λ manta iut_s3_algo → λ git master* → python test_perf.py simpleHash 1000000
 Insertion Time: 1.2083923816680908
 Search time: 0.04334592819213867
+```
