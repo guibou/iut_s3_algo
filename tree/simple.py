@@ -35,3 +35,6 @@ def search(tree, value):
         return search(tree.left, value)
 
     return search(tree.right, value)
+
+def empty():
+    return Tree(0, None, None)

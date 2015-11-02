@@ -1,22 +1,24 @@
 import time
 import sys
 
-import avlQuick
-import avlSlow
-import simple
-import avlGeneric
+import tree.avlQuick
+import tree.avlSlow
+import tree.simple
+import tree.avlGeneric
+import hash.simpleHash
 
 method = sys.argv[1]
 n = int(sys.argv[2])
 
 arbre = {
-    'avlQuick': avlQuick,
-    'simple': simple,
-    'avlSlow': avlSlow,
-    'avlGeneric': avlGeneric,
+    'avlQuick': tree.avlQuick,
+    'simple': tree.simple,
+    'avlSlow': tree.avlSlow,
+    'avlGeneric': tree.avlGeneric,
+    'simpleHash': hash.simpleHash,
     }.get(method)
 
-hauteur = arbre.hauteur
+empty = arbre.empty
 
 if method != 'avlGeneric':
     insert = arbre.insert
@@ -31,14 +33,13 @@ else:
     def search(tree, value):
         return arbre.search(tree, value, key)
 
-tree = arbre.Tree(0, None, None)
+tree = empty()
 
 t = time.time()
 for i in range(1, n):
     insert(tree, i)
 
 print("Insertion Time:", time.time() - t)
-print(hauteur(tree))
 
 if 1:
     t = time.time()
