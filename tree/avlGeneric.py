@@ -93,10 +93,13 @@ def search(tree, value, key):
     if tree == None:
         return None
 
-    if key(tree.value) == key(value):
+    if key(tree.value) == value:
         return tree.value
 
-    if key(value) < key(tree.value):
+    if value < key(tree.value):
         return search(tree.left, value, key)
 
     return search(tree.right, value, key)
+
+def empty():
+    return Tree(0, None, None)
